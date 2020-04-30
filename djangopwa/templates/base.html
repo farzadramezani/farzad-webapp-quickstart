@@ -1,0 +1,56 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <meta name="theme-color" content="#493174">
+    <link rel="apple-touch-icon" href="{% static 'icons/aurss.192x192.png' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Custom -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- lightbox -->
+    <link rel="stylesheet" href="{% static 'css/lightbox.min.css' %}">
+    <title>LangU {% block title %}{% endblock %} </title>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    {% include 'partials/_topbar.html' %}
+    <!-- nav Bar -->
+    <!-- {% include 'partials/_navbar.html' %} -->
+
+    {% block content %}  {% endblock %}
+    {% block body %}   {% endblock %}
+    <!-- footer -->
+    {% include 'partials/_footer.html' %}
+
+<!--     {% block sw_script %}
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('{% url "sw.js" %}', { scope: '/' }).then(function(reg) {
+                    // registration worked
+                    console.log('Registration succeeded. Scope is ' + reg.scope);
+                }).catch(function(error) {
+                    // registration failed
+                    console.log('Registration failed with ' + error);
+                });
+            }
+        </script>
+    {% endblock %} -->
+
+    <script src="{% static 'js/jquery-3.3.1.min.js' %} "></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %} "></script>
+    <script src="{% static 'js/lightbox.min.js' %} "></script>
+    <script src="{% static 'js/main.js' %} "></script>
+</body>
+</html>

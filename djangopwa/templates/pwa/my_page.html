@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block title %}Test PWA site – Home page{% endblock %}
+
+{% block body %}
+    <h1>A page 2333</h1>
+
+    <p>This is a very small and uninteresting</p>
+
+    <ul>
+    {% for route_name, route_url in routes.items %}
+        <li><a href="{{ route_url }}">{{ route_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
